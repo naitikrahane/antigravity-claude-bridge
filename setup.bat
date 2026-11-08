@@ -53,14 +53,16 @@ echo   }
 echo }
 ) > "%SETTINGS_FILE%"
 
-:: 4. Install Global Helper Launchers (claude-agy & claude-gemini)
-echo [4/5] Setting up global CLI commands (claude-agy and claude-gemini)...
+:: 4. Install Global Helper Launchers (claude-agy, claude-gemini, claude-continue)
+echo [4/5] Setting up global CLI commands (claude-agy, claude-gemini, claude-continue)...
 for /f "delims=" %%i in ('npm root -g') do set "NPM_GLOBAL_PATH=%%~dpi"
 if not "%NPM_GLOBAL_PATH%"=="" (
     copy /y "%~dp0bin\claude-agy.cmd" "%NPM_GLOBAL_PATH%" >nul 2>nul
     copy /y "%~dp0bin\claude-agy.ps1" "%NPM_GLOBAL_PATH%" >nul 2>nul
     copy /y "%~dp0bin\claude-gemini.cmd" "%NPM_GLOBAL_PATH%" >nul 2>nul
     copy /y "%~dp0bin\claude-gemini.ps1" "%NPM_GLOBAL_PATH%" >nul 2>nul
+    copy /y "%~dp0bin\claude-continue.cmd" "%NPM_GLOBAL_PATH%" >nul 2>nul
+    copy /y "%~dp0bin\claude-continue.ps1" "%NPM_GLOBAL_PATH%" >nul 2>nul
 )
 
 :: 5. Account Authentication Check
@@ -94,6 +96,7 @@ echo You can now run Claude Code from ANY terminal:
 echo.
 echo   claude-agy      -^> Claude Sonnet 4.6 (Antigravity)
 echo   claude-gemini   -^> Gemini 3.8 Flash (Antigravity)
+echo   claude-continue -^> Resume previous conversation without losing chat
 echo   claude          -^> Claude Code CLI with full model discovery
 echo.
 echo Multi-Account Tips:

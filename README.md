@@ -101,17 +101,35 @@ Once installed, launch Claude Code from **any terminal window**:
   ```bash
   claude-gemini
   ```
+- **Resume Last Chat (Never Lose Context):**
+  ```bash
+  claude-continue
+  ```
+  *(or `claude -c` / `claude --resume`)*
 
 ### Method 2: Standard Command with Dynamic Model Selection
 Run standard `claude`:
 ```bash
 claude
 ```
-Inside your active Claude Code session, switch to any model anytime:
+Inside your active Claude Code session, switch to any model anytime without losing conversation history:
 ```text
 /model
 ```
 Because **Gateway Model Discovery** is enabled, all Gemini and Claude models provided by Antigravity will appear in the interactive picker.
+
+---
+
+## 🧠 Never Lose Chat Context (Seamless Continuity)
+
+If you hit a rate limit on one model or need to switch:
+
+1. **Inside an active session:**
+   Simply type `/model` and pick your target model (e.g. `gemini-3.8-flash-medium`). Claude switches backend instantly while keeping full conversation memory intact.
+2. **If you closed terminal or restarted:**
+   Run `claude-continue` (or `claude-gemini -c`) to pick up the exact conversation where you left off.
+3. **To prevent rate limits entirely:**
+   Run `acc accounts add` to connect 2 or more Google accounts. The proxy will seamlessly balance quota and failover across accounts without interrupting your chat.
 
 ---
 

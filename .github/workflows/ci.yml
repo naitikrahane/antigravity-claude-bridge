@@ -20,9 +20,11 @@ jobs:
           bash -n setup.sh
           bash -n bin/claude-agy
           bash -n bin/claude-gemini
+          bash -n bin/claude-continue
       - name: Validate Windows Batch Scripts
         if: runner.os == 'Windows'
         run: |
           if (-not (Test-Path .\setup.bat)) { throw "setup.bat missing" }
           if (-not (Test-Path .\bin\claude-agy.cmd)) { throw "claude-agy.cmd missing" }
           if (-not (Test-Path .\bin\claude-gemini.cmd)) { throw "claude-gemini.cmd missing" }
+          if (-not (Test-Path .\bin\claude-continue.cmd)) { throw "claude-continue.cmd missing" }

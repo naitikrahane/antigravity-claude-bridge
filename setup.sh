@@ -37,14 +37,16 @@ cat << 'EOF' > "$HOME/.claude/settings.json"
 }
 EOF
 
-# 4. Install Global Helper Launchers (claude-agy & claude-gemini)
-echo "[4/5] Setting up global CLI commands (claude-agy and claude-gemini)..."
+# 4. Install Global Helper Launchers (claude-agy, claude-gemini, claude-continue)
+echo "[4/5] Setting up global CLI commands (claude-agy, claude-gemini, claude-continue)..."
 NPM_BIN_DIR="$(npm bin -g 2>/dev/null || dirname "$(npm root -g)")"
 if [ -d "$NPM_BIN_DIR" ]; then
     cp -f "$(dirname "$0")/bin/claude-agy" "$NPM_BIN_DIR/claude-agy" 2>/dev/null || true
     chmod +x "$NPM_BIN_DIR/claude-agy" 2>/dev/null || true
     cp -f "$(dirname "$0")/bin/claude-gemini" "$NPM_BIN_DIR/claude-gemini" 2>/dev/null || true
     chmod +x "$NPM_BIN_DIR/claude-gemini" 2>/dev/null || true
+    cp -f "$(dirname "$0")/bin/claude-continue" "$NPM_BIN_DIR/claude-continue" 2>/dev/null || true
+    chmod +x "$NPM_BIN_DIR/claude-continue" 2>/dev/null || true
 fi
 
 # 5. Check account
@@ -64,9 +66,10 @@ echo "                   SETUP COMPLETED SUCCESSFULLY!                    "
 echo "===================================================================="
 echo ""
 echo "You can now run Claude Code directly with:"
-echo "  claude-agy     -> Claude Sonnet 4.6 (Antigravity)"
-echo "  claude-gemini  -> Gemini 3.8 Flash (Antigravity)"
-echo "  claude         -> Claude Code CLI with full model discovery"
+echo "  claude-agy       -> Claude Sonnet 4.6 (Antigravity)"
+echo "  claude-gemini    -> Gemini 3.8 Flash (Antigravity)"
+echo "  claude-continue  -> Resume previous chat without losing context"
+echo "  claude           -> Claude Code CLI with full model discovery"
 echo ""
 echo "To add more Google accounts for rotation:"
 echo "  acc accounts add"
