@@ -1,0 +1,33 @@
+name: CI Validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-scripts:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate scripts syntax (Unix)
+        if: runner.os != 'Windows'
+        run: |
+          bash -n setup.sh
+          bash -n bin/claude-agy
+          bash -n bin/claude-gemini
+      - name: Validate scripts syntax (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          Get-Command -Syntax powershell
+          Test-Path .\setup.bat
+          Test-Path .\bin\claude-agy.cmd
+          Test-Path .\bin\claude-gemini.cmd
