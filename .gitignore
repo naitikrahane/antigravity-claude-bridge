@@ -25,6 +25,9 @@ usage-history.json
 *.backup
 *.bak
 
+# Utility scripts
+push-to-github.bat
+
 # OS specific files
 .DS_Store
 Thumbs.db

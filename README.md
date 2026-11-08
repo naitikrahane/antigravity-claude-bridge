@@ -37,7 +37,7 @@ This bridge connects Claude Code's terminal interface directly to your **Google 
 ### Windows
 1. Clone this repository or download the ZIP:
    ```bash
-   git clone https://github.com/<your-username>/antigravity-claude-bridge.git
+   git clone https://github.com/naitikrahane/antigravity-claude-bridge.git
    cd antigravity-claude-bridge
    ```
 2. Double-click **`setup.bat`** (or run `.\setup.bat` in PowerShell/CMD).
@@ -54,7 +54,7 @@ This bridge connects Claude Code's terminal interface directly to your **Google 
 ### macOS / Linux
 1. Clone this repository:
    ```bash
-   git clone https://github.com/<your-username>/antigravity-claude-bridge.git
+   git clone https://github.com/naitikrahane/antigravity-claude-bridge.git
    cd antigravity-claude-bridge
    ```
 2. Make executable and run:
