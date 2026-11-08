@@ -1,0 +1,30 @@
+# Node & Dependencies
+node_modules/
+package-lock.json
+
+# Credentials & Sensitive User Data (NEVER COMMIT)
+accounts.json
+*.jsonl
+*.pid
+.env
+.env.*
+*.log
+logs/
+
+# Proxy Runtime Data
+.config/
+app-data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+claude-presets.json
+usage-history.json
+
+# Claude Settings & Backups
+.claude/
+*.backup
+*.bak
+
+# OS specific files
+.DS_Store
+Thumbs.db

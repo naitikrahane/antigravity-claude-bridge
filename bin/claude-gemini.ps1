@@ -1,0 +1,9 @@
+$env:ANTHROPIC_API_KEY = $null
+$env:ANTHROPIC_BASE_URL = "http://localhost:8080"
+$env:ANTHROPIC_AUTH_TOKEN = "test"
+$env:ANTHROPIC_MODEL = "gemini-3.8-flash-medium"
+$env:ANTHROPIC_DEFAULT_SONNET_MODEL = "gemini-3.8-flash-medium"
+$env:ANTHROPIC_DEFAULT_OPUS_MODEL = "gemini-3.8-flash-high"
+$env:ANTHROPIC_DEFAULT_HAIKU_MODEL = "gemini-3.5-flash-lite"
+$env:CLAUDE_CODE_SUBAGENT_MODEL = "gemini-3.5-flash-lite"
+& claude.ps1 $args

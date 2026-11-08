@@ -1,0 +1,9 @@
+$env:ANTHROPIC_API_KEY = $null
+$env:ANTHROPIC_BASE_URL = "http://localhost:8080"
+$env:ANTHROPIC_AUTH_TOKEN = "test"
+$env:ANTHROPIC_MODEL = "claude-sonnet-4-6"
+$env:ANTHROPIC_DEFAULT_SONNET_MODEL = "claude-sonnet-4-6"
+$env:ANTHROPIC_DEFAULT_OPUS_MODEL = "claude-opus-4-6-thinking"
+$env:ANTHROPIC_DEFAULT_HAIKU_MODEL = "claude-sonnet-4-6"
+$env:CLAUDE_CODE_SUBAGENT_MODEL = "claude-sonnet-4-6"
+& claude.ps1 $args
