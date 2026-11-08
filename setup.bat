@@ -39,17 +39,17 @@ if not exist "%CLAUDE_DIR%" mkdir "%CLAUDE_DIR%"
 set "SETTINGS_FILE=%CLAUDE_DIR%\settings.json"
 (
 echo {
+echo   "autoUpdates": false,
 echo   "env": {
 echo     "ANTHROPIC_BASE_URL": "http://localhost:8080",
 echo     "ANTHROPIC_AUTH_TOKEN": "test",
 echo     "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": "1",
-echo     "ANTHROPIC_MODEL": "claude-sonnet-4-6",
+echo     "DISABLE_AUTOUPDATER": "1",
 echo     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6",
 echo     "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6-thinking",
 echo     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "gemini-3.8-flash-medium",
 echo     "CLAUDE_CODE_SUBAGENT_MODEL": "gemini-3.5-flash-lite"
-echo   },
-echo   "model": "claude-sonnet-4-6"
+echo   }
 echo }
 ) > "%SETTINGS_FILE%"
 

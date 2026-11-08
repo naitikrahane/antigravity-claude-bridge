@@ -23,17 +23,17 @@ echo "[3/5] Configuring Claude Code settings with Model Gateway Discovery..."
 mkdir -p "$HOME/.claude"
 cat << 'EOF' > "$HOME/.claude/settings.json"
 {
+  "autoUpdates": false,
   "env": {
     "ANTHROPIC_BASE_URL": "http://localhost:8080",
     "ANTHROPIC_AUTH_TOKEN": "test",
     "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": "1",
-    "ANTHROPIC_MODEL": "claude-sonnet-4-6",
+    "DISABLE_AUTOUPDATER": "1",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-6-thinking",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "gemini-3.8-flash-medium",
     "CLAUDE_CODE_SUBAGENT_MODEL": "gemini-3.5-flash-lite"
-  },
-  "model": "claude-sonnet-4-6"
+  }
 }
 EOF
 
