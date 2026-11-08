@@ -38,7 +38,7 @@ cat << 'EOF' > "$HOME/.claude/settings.json"
 EOF
 
 # 4. Install Global Helper Launchers (claude-agy & claude-gemini)
-echo "[4/5] Setting up global CLI commands (claude-agy and claude-gemini)...
+echo "[4/5] Setting up global CLI commands (claude-agy and claude-gemini)..."
 NPM_BIN_DIR="$(npm bin -g 2>/dev/null || dirname "$(npm root -g)")"
 if [ -d "$NPM_BIN_DIR" ]; then
     cp -f "$(dirname "$0")/bin/claude-agy" "$NPM_BIN_DIR/claude-agy" 2>/dev/null || true

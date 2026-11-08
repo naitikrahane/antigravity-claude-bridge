@@ -14,20 +14,15 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Validate scripts syntax (Unix)
+      - name: Validate Unix Shell Scripts
         if: runner.os != 'Windows'
         run: |
           bash -n setup.sh
           bash -n bin/claude-agy
           bash -n bin/claude-gemini
-      - name: Validate scripts syntax (Windows)
+      - name: Validate Windows Batch Scripts
         if: runner.os == 'Windows'
         run: |
-          Get-Command -Syntax powershell
-          Test-Path .\setup.bat
-          Test-Path .\bin\claude-agy.cmd
-          Test-Path .\bin\claude-gemini.cmd
+          if (-not (Test-Path .\setup.bat)) { throw "setup.bat missing" }
+          if (-not (Test-Path .\bin\claude-agy.cmd)) { throw "claude-agy.cmd missing" }
+          if (-not (Test-Path .\bin\claude-gemini.cmd)) { throw "claude-gemini.cmd missing" }
